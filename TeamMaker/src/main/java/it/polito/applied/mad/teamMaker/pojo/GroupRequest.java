@@ -13,10 +13,12 @@ public class GroupRequest {
 	@Id
 	private String id;
 	private List<String> toConfirmRequestsId;
+	/*StudentID lists*/
 	private List<String> usersIdConfirmed;
 	@Indexed(expireAfterSeconds=86400)
 	private Date date;
 	private String groupName;
+	private String cancelingToken;
 	public String getId() {
 		return id;
 	}
@@ -46,6 +48,12 @@ public class GroupRequest {
 	}
 	public void setUsersIdConfirmed(List<String> usersIdConfirmed) {
 		this.usersIdConfirmed = usersIdConfirmed;
+	}
+	public String getCancelingToken() {
+		return cancelingToken;
+	}
+	public void setCancelingToken(String cancelingToken) {
+		this.cancelingToken = cancelingToken;
 	}
 	
 	

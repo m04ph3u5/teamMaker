@@ -49,10 +49,26 @@
 	<section>
 		<div class="container">
 			<div class="row">
-				<h2>Something goes wrong</h2>
-				<h4>Your request is expired or, some member of your was already subscribed in a team (maybe someone of your teammate had already subscribe your team).</h4>
-				<h4>Please check on <a href="/">home page</a>.</h4>		
-
+				<c:choose>
+					<c:when test="${groupNumber>'0'}">
+						<h2>Your attendance to group was confirmed.</h2>
+						<br>
+						<h2>Team created!</h2>
+						<h4>Your team has been correctly registered in the system. Your team number is ${groupNumber}.</h4>
+						<h4>Visit <a href="/">home page</a> to see all registered teams</h4>
+					</c:when>
+					<c:otherwise>
+						<h2>Your attendance to group was confirmed.</h2>
+						<c:choose>
+							<c:when test="${missingAttendees=='1'}">
+								<h4>In order to complete group subscription the last attendee should confirm</h4>
+							</c:when>
+							<c:otherwise>
+								<h4>In order to complete group subscription, ${missingAttendees} more attendees need to confirm</h4>
+							</c:otherwise>
+						</c:choose>
+					</c:otherwise>
+				</c:choose>
 			</div>
 		</div>
 	</section>

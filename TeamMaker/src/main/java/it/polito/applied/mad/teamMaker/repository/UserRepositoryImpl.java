@@ -5,10 +5,10 @@ import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.data.mongodb.core.query.Update;
 
 import it.polito.applied.mad.teamMaker.pojo.Status;
 import it.polito.applied.mad.teamMaker.pojo.User;
@@ -47,8 +47,27 @@ public class UserRepositoryImpl implements CustomUserRepository{
 		Criteria c3 = new Criteria();
 		c1.andOperator(Criteria.where("status").is(Status.PENDING), Criteria.where("lastGroupRequest").gt(d));
 		c2.orOperator(Criteria.where("status").is(Status.FREE), c1);
-		q.addCriteria(c3.andOperator(Criteria.where("id").in(attendees), c2));
+		q.addCriteria(c3.andOperator(Criteria.where("studentId").in(attendees), c2));
 		return mongoOp.find(q, User.class);
+	}
+
+	@Override
+	public void setToConfirmed(List<String> usersIdConfirmed) {
+		Query q = new Query();
+		q.addCriteria(Criteria.where("studentId").in(usersIdConfirmed));
+		Update u = new Update();
+		u.set("status", Status.CONFIRMED);
+		mongoOp.updateMulti(q, u, User.class);
+		
+	}
+
+	@Override
+	public void setToFree(List<String> studentsId) {
+		Query q = new Query();
+		q.addCriteria(Criteria.where("studentId").in(studentsId));
+		Update u = new Update();
+		u.set("status", Status.FREE);
+		mongoOp.updateMulti(q, u, User.class);		
 	}
 
 }

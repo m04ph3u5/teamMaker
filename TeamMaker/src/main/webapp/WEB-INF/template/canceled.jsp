@@ -49,10 +49,8 @@
 	<section>
 		<div class="container">
 			<div class="row">
-				<h2>Something goes wrong</h2>
-				<h4>Your request is expired or, some member of your was already subscribed in a team (maybe someone of your teammate had already subscribe your team).</h4>
-				<h4>Please check on <a href="/">home page</a>.</h4>		
-
+				<h2>Request canceled</h2>
+				<h4>Team creation request has been correctly canceled.</h4>
 			</div>
 		</div>
 	</section>

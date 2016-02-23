@@ -29,11 +29,11 @@
 						class="icon-bar"></span>
 				</button>
 				<a class="navbar-brand hidden-xs visible-sm visible-md visible-lg"
-					href="/index"><img style="float: left;"
+					href="/"><img style="float: left;"
 					src="assets/images/poli_logo_poli.png" height="50px" alt="logo" />
 					<span class="navbar-title">Mobile Application Development</span></a> <a
 					class="navbar-brand visible-xs hidden-sm hidden-md hidden-lg"
-					href="/index"><img style="float: left;"
+					href="/"><img style="float: left;"
 					src="assets/images/poli_logo_poli.png" height="35px" alt="logo" />
 					<span class="navbar-title">MAD</span></a>
 			</div>

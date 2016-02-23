@@ -29,11 +29,11 @@
 						class="icon-bar"></span>
 				</button>
 				<a class="navbar-brand hidden-xs visible-sm visible-md visible-lg"
-					href="/index"><img style="float: left;"
+					href="/"><img style="float: left;"
 					src="assets/images/poli_logo_poli.png" height="50px" alt="logo" />
 					<span class="navbar-title">Mobile Application Development</span></a> <a
 					class="navbar-brand visible-xs hidden-sm hidden-md hidden-lg"
-					href="/index"><img style="float: left;"
+					href="/"><img style="float: left;"
 					src="assets/images/poli_logo_poli.png" height="35px" alt="logo" />
 					<span class="navbar-title">MAD</span></a>
 			</div>
@@ -50,18 +50,18 @@
 		<div class="container">
 			<div class="row">
 				<h2>Create new team</h2>
-				<h4>Insert your studentId and those of yours teammate. Or if
-					you prefer looking for them using their lastname.</h4>
+				<h4>Insert your studentId and those of yours teammates. Or, if
+					you prefer, look for them using their name.</h4>
 				<h5>Remember! Just one component of your team must perform this
-					operation. If you or your teammate are already in a team, you'll
-					not be able to add it.</h5>
+					operation. If either you or any of your teammates are already in a team, you'll
+					not be able to add them.</h5>
 				<hr>
 				<div class="center">
 					<div class="row" style="padding-bottom: 50px;">
 						<select id="firstAttendee" class="js-basic-single"	style="width: 50%;">
 							<option value=""></option>
 							<c:forEach items="${users}" var="u">
-								<option value="${u.id}">${u.studentId} - ${u.lastname} ${u.firstname}</option>
+								<option value="${u.studentId}">${u.studentId} - ${u.lastname} ${u.firstname}</option>
 							</c:forEach>
 						</select>
 					</div>
@@ -69,7 +69,7 @@
 						<select id="secondAttendee" class="js-basic-single"	style="width: 50%;">
 							<option value=""></option>
 							<c:forEach items="${users}" var="u">
-								<option value="${u.id}">${u.studentId} - ${u.lastname} ${u.firstname}</option>
+								<option value="${u.studentId}">${u.studentId} - ${u.lastname} ${u.firstname}</option>
 							</c:forEach>
 						</select>
 					</div>
@@ -77,7 +77,7 @@
 						<select id="thirdAttendee" class="js-basic-single"	style="width: 50%;">
 							<option value=""></option>
 							<c:forEach items="${users}" var="u">
-								<option value="${u.id}">${u.studentId} - ${u.lastname} ${u.firstname}</option>
+								<option value="${u.studentId}">${u.studentId} - ${u.lastname} ${u.firstname}</option>
 							</c:forEach>
 						</select>
 					</div>
@@ -85,7 +85,7 @@
 						<select id="fourthAttendee" class="js-basic-single"	style="width: 50%;">
 							<option value=""></option>
 							<c:forEach items="${users}" var="u">
-								<option value="${u.id}">${u.studentId} - ${u.lastname} ${u.firstname}</option>
+								<option value="${u.studentId}">${u.studentId} - ${u.lastname} ${u.firstname}</option>
 							</c:forEach>
 						</select>
 					</div>

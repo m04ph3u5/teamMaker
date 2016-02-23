@@ -49,10 +49,9 @@
 	<section>
 		<div class="container">
 			<div class="row">
-				<h2>Something goes wrong</h2>
-				<h4>Your request is expired or, some member of your was already subscribed in a team (maybe someone of your teammate had already subscribe your team).</h4>
-				<h4>Please check on <a href="/">home page</a>.</h4>		
-
+				<div style="font-size:6em;"><b><i>400</i></b></div>
+				<h3>Ooops... Something goes wrong.</h3>
+				<h5>Link expired.</h5>
 			</div>
 		</div>
 	</section>
