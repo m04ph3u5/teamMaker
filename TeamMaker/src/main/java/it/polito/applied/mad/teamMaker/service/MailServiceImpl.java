@@ -23,7 +23,7 @@ public class MailServiceImpl implements MailService {
 	@Value("${baseUrlDomain}")
 	private String baseUrlDomain;
 	
-	private final String STUDENT_EMAIL_DOMAIN = "@sti.poliiiiiito.it";
+	private final String STUDENT_EMAIL_DOMAIN = "@studenti.polito.it";
 
 	@Override
 	public void sendConfirmationMessage(String studentId, String token, List<User> users, String groupName, String cancelingToken) {
@@ -87,7 +87,7 @@ public class MailServiceImpl implements MailService {
 				return "s"+studentId+STUDENT_EMAIL_DOMAIN;
 			}
 		}else if(studentId.length()==7){
-			String sDigitRegex="?i:\\bs\\d{6}\\b";
+			String sDigitRegex="\\bs\\d{6}\\b";
 			if(studentId.matches(sDigitRegex)){
 				return studentId+STUDENT_EMAIL_DOMAIN;
 			}

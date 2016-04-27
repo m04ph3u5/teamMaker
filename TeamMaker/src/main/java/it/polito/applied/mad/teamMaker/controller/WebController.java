@@ -39,7 +39,7 @@ public class WebController {
 	@RequestMapping(value="/addTeam", method=RequestMethod.GET)
 	public String getAddTeam(Model m) {
 		System.out.println("addTeam");
-		List<User> users = userRepo.findByStatus(Status.FREE);
+		List<User> users = userRepo.findAllUserAvailable();
 		m.addAttribute("users", users);
 	    return "addTeam";
 	}

@@ -62,6 +62,11 @@ public class OperationServiceImpl implements OperationService{
 		for(String s : usersId)
 			System.out.println(s);
 		List<User> users = userRepo.findUsersAvailable(usersId);
+		if(users==null)
+			System.out.println("USERS NULL");
+		else{
+			System.out.println(users.size());
+		}
 		if(users.size()==usersId.size()){
 			Date date = new Date();
 			GroupRequest g = new GroupRequest();
